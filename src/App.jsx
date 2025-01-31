@@ -5,6 +5,7 @@ import Nav from "./pages/Nav";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import ProductDelivery from "./pages/ProductDelivery";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -17,16 +18,7 @@ export default function App() {
         <Route path="/products/:id" element={<ProductDetails />}>
           <Route path="delivery" element={<ProductDelivery />} />
         </Route>
-        <Route
-          path="*"
-          element={
-            <div>
-              <h2>Sayfa bulunamadı</h2>
-              <p>Sayfa bulunamadı</p>
-              <a href="/">Ana sayfaya dön</a>
-            </div>
-          }
-        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
